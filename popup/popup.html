@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Entry</title>
+    <link rel="stylesheet" href="bulma.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        .input {
+            width: 85%;
+        }
+
+        #locationIdError {
+
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container m-3">
+        <h1 class="title">Global Entry</h1>
+        <div class="field">
+            <label class="label">Status</label>
+            <span class="tag is-success" id="runingSpan">Running</span>
+            <span class="tag is-danger" id="stopSpan">Stop</span>
+        </div>
+    </div>
+
+    <form class="container m-3">
+        <div class="field">
+            <label class="label">Location ID</label>
+            <div class="select">
+                <select id="locationId">
+                    <option value="" disabled selected>Select your location</option>
+
+                </select>
+            </div>
+            <p id="locationIdError" class="help is-danger">Please select vaild Id </p>
+        </div>
+        <div class="field">
+            <label class="label">Start Date</label>
+            <div class="control">
+                <input type="date" class="input" id="startDate" placeholder="YYYY-MM-DD">
+            </div>
+            <p id="startDateError" class="help is-danger" style=" display: none;">Please select vaild startDate</p>
+        </div>
+
+        <div class="field">
+            <label class="label">End Date</label>
+            <div class="control">
+                <input type="date" class="input" id="endDate" placeholder="YYYY-MM-DD">
+            </div>
+            <p id="endDateError" class="help is-danger" style=" display: none;">Please select valid endDate</p>
+        </div>
+
+        <div class="container m-3">
+            <button type="submit" class="button is-success is-fullwidth" id="startButton">Save & Start</button>
+        </div>
+        <div class="container m-3">
+            <button type="button" class="button is-danger is-fullwidth" id="stopButton">Stop</button>
+        </div>
+    </form>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
